@@ -8,7 +8,7 @@ const MiniCardNoticia = ({ title, date, imageSrc }) => (
             <img
                 src={imageSrc}
                 alt={title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-100"
+                className="w-fit h-fit object-cover group-hover:scale-110 transition-transform duration-700 opacity-70 group-hover:opacity-100"
             />
         </div>
 
@@ -63,11 +63,11 @@ class Noticies extends React.Component {
             }
         ],
         noticiesCurtes: [
-            { title: "Filtració: Nou títol de 'The Witcher'", date: "Fa 2 hores", imageSrc: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/292030/96b8627588997030e5a6b56ca5e9944756c8f288/capsule_616x353.jpg?t=1761131270" },
+            { title: "Filtració: Nou títol de 'The Witcher'", date: "Fa 2 hores", imageSrc: "https://cdn.cdkeys.com/496x700/media/catalog/product/n/e/new_project_-_2023-04-05t141127.373.jpg" },
             { title: "El joc indie del mes: 'Stardew Valley II'", date: "Fa 5 hores", imageSrc: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Logo_of_Stardew_Valley.png/250px-Logo_of_Stardew_Valley.png" },
-            { title: "Tendències en E-Sports: L'auge de Valorant", date: "Avui", imageSrc: "https://store-images.s-microsoft.com/image/apps.21507.13663857844271189.4c1de202-3961-4c40-a0aa-7f4f1388775a.20ed7782-0eda-4f9d-b421-4cc47492edc6" },
-            { title: "Anunci sorpresa de Nintendo: Metroid Prime 4", date: "Ahir", imageSrc: "" },
-            { title: "Guia de trofeus per a Cyberpunk 2077", date: "Setmana passada", imageSrc: "" },
+            { title: "Tendències en E-Sports: L'auge de Valorant", date: "Avui", imageSrc: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/valo2.png" },
+            { title: "Anunci sorpresa de Nintendo: Metroid Prime 4", date: "Ahir", imageSrc: "https://assets.nintendo.eu/image/private/f_auto,c_limit,w_1920,q_auto:low/hmywrkds1blhptid3lcs" },
+            { title: "Guia de trofeus per a Cyberpunk 2077", date: "Setmana passada", imageSrc: "https://www.codigi.es/wp-content/uploads/2021/01/Cyberpunk-2077-PC-COVER.jpg" },
         ]
     };
 
@@ -121,13 +121,7 @@ class Noticies extends React.Component {
                         <div className="flex-shrink-0 w-8"></div>
                     </div>
                 </div>
-
-                <div className="max-w-7xl mx-auto px-4 text-center mt-10">
-                    <button className="px-8 py-2.5 bg-[#9eefe5] text-[#2c373d] rounded-lg font-bold text-lg
-                           hover:bg-white transition-all duration-300 shadow-xl transform hover:scale-[1.02]">
-                        Veure l'Arxiu Complet
-                    </button>
-                </div>
+                
                 <div className="pb-12"></div>
             </div>
         );
