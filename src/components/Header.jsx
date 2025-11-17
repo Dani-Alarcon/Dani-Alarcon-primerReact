@@ -16,6 +16,9 @@ class Header extends React.Component {
                         <nav class="main-nav flex-grow flex justify-center space-x-12">
                             <ul class="flex space-x-8">
                                 <li class="nav-item">
+                                    <a class="text-[#9eefe5] hover:text-white transition-colors" href="inici.html">Inici</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="text-[#9eefe5] hover:text-white transition-colors" href="noticies.html">Notícies</a>
                                 </li>
 
