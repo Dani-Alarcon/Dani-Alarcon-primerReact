@@ -68,8 +68,6 @@ class Noticies extends React.Component {
             { title: "Tendències en E-Sports: L'auge de Valorant", date: "Avui", imageSrc: "https://store-images.s-microsoft.com/image/apps.21507.13663857844271189.4c1de202-3961-4c40-a0aa-7f4f1388775a.20ed7782-0eda-4f9d-b421-4cc47492edc6" },
             { title: "Anunci sorpresa de Nintendo: Metroid Prime 4", date: "Ahir", imageSrc: "" },
             { title: "Guia de trofeus per a Cyberpunk 2077", date: "Setmana passada", imageSrc: "" },
-            { title: "Guia de trofeus per a Cyberpunk 2077", date: "Setmana passada", imageSrc: "" },
-            { title: "Guia de trofeus per a Cyberpunk 2077", date: "Setmana passada", imageSrc: "" },
         ]
     };
 
@@ -77,8 +75,9 @@ class Noticies extends React.Component {
         const { noticiesDestacades, noticiesCurtes } = this.state;
 
         return (
-            <div className="relative w-full min-h-screen py-12 bg-[#2c373d] bg-center bg-no-repeat overflow-hidden">
-
+            <div className="relative w-full min-h-screen py-12 bg-[#2c373d] bg-center bg-no-repeat overflow-hidden"
+            style={{width:"100vw" }}
+            >
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
 
                     <div className="text-center mb-10">
@@ -108,7 +107,7 @@ class Noticies extends React.Component {
                     </h2>
                 </div>
 
-                <div className="px-4">
+                <div style={{marginLeft:"12%" }}>
                     <div className="flex space-x-6 overflow-x-auto pb-4 custom-scrollbar">
                         {noticiesCurtes.map((noticia, index) => (
                             <div key={index} className="flex-shrink-0 w-64">
