@@ -1,7 +1,6 @@
 import React from "react";
 
 const Card = ({ title, buttonText, index }) => {
-    // Variables: Estils de la targeta i del botó
     const estilTargeta = "flex items-center justify-between p-3 rounded-lg shadow-lg mb-3 transition-all duration-500 transform";
     const estilBoto = "relative z-10 px-4 py-1.5 bg-[#2c373d] text-[#9eefe5] rounded-lg font-medium text-sm hover:bg-[#9eefe5] hover:text-[#2c373d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105";
 
@@ -50,7 +49,6 @@ const Imatge = ({ imageSrc, title, category }) => (
 );
 
 const Section = () => {
-    // Dades de contingut
     const llistatNoticies = [
         { title: "Les últimes novetats del món gaming", buttonText: "Veure més" },
         { title: "Anàlisi dels millors llançaments", buttonText: "Veure més" },
@@ -72,7 +70,6 @@ const Section = () => {
              title: "Guia completa per principiants", category: "GUIA" }
     ];
 
-    // Estils de Tailwind agrupats
     const classesColumna = "w-full lg:w-1/2 p-6 rounded-xl backdrop-blur-md shadow-xl border-2 border-[#9eefe5]/40 shadow-[#9eefe5]/30 transition-all duration-500 hover:shadow-[#9eefe5]/50 hover:border-[#9eefe5]/60 transform hover:-translate-y-1 bg-gradient-to-br from-[#4b617b]/90 to-[#3d4f61]/90";
     const divisorTitol = "h-0.5 flex-1 bg-gradient-to-r from-transparent to-[#9eefe5]/50 rounded-full";
     const classesTitol = "text-xl sm:text-2xl font-bold text-[#9eefe5] font-iceberg drop-shadow-lg";
