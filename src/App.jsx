@@ -5,9 +5,10 @@ import Inici from './components/Section'
 import Footer from './components/Footer'
 import Noticies from './components/Noticies'
 import Videojocs from './components/Videojocs'
+import Contacte from './components/Contacte'
 
 
-const Contacte = () => <div>Pàgina de Contacte en desenvolupament</div>;
+
 
 class App extends React.Component {
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component {
             <Route path="/videojocs" element={<Videojocs />} />
             <Route path="/contacte" element={<Contacte />} />
             <Route path="/videojocs" element={<Videojocs />} />
+            <Route path="/contacte" element={<Contacte />} />
           </Routes>
         </main>
 

@@ -25,7 +25,7 @@ const MiniCardNoticia = ({ title, date, imageSrc }) => (
     </article>
 );
 
-const NoticiaDestacada = ({ title, excerpt, imageSrc, category }) => (
+const NoticiaDestacada = ({ title, descripcio, imageSrc, category }) => (
     <article className="relative p-5 rounded-xl bg-gradient-to-br from-[#4b617b]/90 to-[#3d4f61]/90 
                         backdrop-blur-md shadow-xl border-2 border-[#9eefe5]/40 shadow-[#9eefe5]/30 h-full">
 
@@ -40,7 +40,7 @@ const NoticiaDestacada = ({ title, excerpt, imageSrc, category }) => (
         </div>
 
         <h2 className="text-2xl font-bold text-[#9eefe5] font-iceberg mb-2 drop-shadow-lg">{title}</h2>
-        <p className="text-white/90 mb-4">{excerpt}</p>
+        <p className="text-white/90 mb-4">{descripcio}</p>
 
         <button className="px-4 py-1.5 bg-[#2c373d] text-[#9eefe5] rounded-lg font-medium text-sm
                            hover:bg-[#9eefe5] hover:text-[#2c373d] transition-all duration-300 font-iceberg
@@ -55,13 +55,13 @@ class Noticies extends React.Component {
         noticiesDestacades: [
             {
                 title: "El nou motor gràfic revoluciona el món obert",
-                excerpt: "Una anàlisi exhaustiva de les noves tecnologies implementades en els jocs d'última generació.",
+                descripcio: "Una anàlisi exhaustiva de les noves tecnologies implementades en els jocs d'última generació.",
                 imageSrc: "https://user-images.githubusercontent.com/180032/54845242-2d1cff00-4cd9-11e9-87af-434063628126.png",
                 category: "TECNOLOGIA"
             },
             {
                 title: "Entrevista amb el creador d'Elden Ring: Els secrets del seu èxit",
-                excerpt: "Parlem amb FromSoftware sobre el seu procés creatiu i les futures expansiones.",
+                descripcio: "Parlem amb FromSoftware sobre el seu procés creatiu i les futures expansiones.",
                 imageSrc: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/capsule_616x353.jpg?t=1748630546",
                 category: "EXCLUSIVA"
             }
@@ -99,7 +99,7 @@ class Noticies extends React.Component {
                             <NoticiaDestacada
                                 key={index}
                                 title={noticia.title}
-                                excerpt={noticia.excerpt}
+                                descripcio={noticia.descripcio}
                                 imageSrc={noticia.imageSrc}
                                 category={noticia.category}
                             />
