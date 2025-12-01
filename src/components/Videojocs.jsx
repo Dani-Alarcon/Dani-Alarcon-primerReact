@@ -1,5 +1,6 @@
 import React from "react";
 import VideoPlayer from "./VideoPlayer";
+import AudioPlayer from "./AudioPlayer";
 
 const StarIcon = () => (
     <svg className="w-4 h-4 text-[#9eefe5]" fill="currentColor" viewBox="0 0 20 20">
@@ -44,31 +45,7 @@ const JocCard = ({ title, plataformas, rating, imageSrc }) => (
     </article>
 );
 
-const JocDestacat = ({ title, descripcio, genere, plataforma }) => (
-    <article className="relative p-6 rounded-xl bg-gradient-to-br from-[#4b617b]/95 to-[#3d4f61]/95 
-                        backdrop-blur-md shadow-2xl border-2 border-[#9eefe5]/40 shadow-[#9eefe5]/30 h-full overflow-hidden">
 
-        <div className="lg:flex gap-6 items-center">
-
-            <div className="lg:w-1/2">
-                <span className="text-sm font-medium text-[#9eefe5] mb-1 block">{plataforma}</span>
-                <h2 className="text-3xl font-bold text-white font-iceberg mb-3 drop-shadow-lg">{title}</h2>
-                <p className="text-white/90 mb-6 text-lg">{descripcio}</p>
-
-                <button className="px-6 py-2 bg-[#9eefe5] text-[#2c373d] rounded-lg font-bold text-base
-                                   hover:bg-white hover:text-[#2c373d] transition-all duration-300 font-iceberg
-                                   shadow-lg transform hover:scale-[1.02]">
-                    Veure Detalls →
-                </button>
-            </div>
-            <div className="lg:w-1/2 hidden lg:block">
-                <div className="absolute top-3 right-3 px-3 py-1 bg-[#9eefe5] text-[#2c373d] rounded-full text-xs font-bold font-iceberg shadow-lg">
-                    {genere}
-                </div>
-            </div>
-        </div>
-    </article>
-);
 
 
 class Videojocs extends React.Component {
@@ -166,7 +143,7 @@ class Videojocs extends React.Component {
                                             webmSrc={trailerBg3.webmSrc}
                                             posterSrc={trailerBg3.posterSrc}
                                             title={trailerBg3.title}
-                                            lazyLoad={false}
+                                            loading='lazy'
                                         />
                                     )}
                                 </div>
@@ -184,6 +161,10 @@ class Videojocs extends React.Component {
                                     <h2 className="text-3xl font-bold text-white font-iceberg mb-3 drop-shadow-lg">{donkey.title}</h2>
                                     <p className="text-white/90 mb-6 text-lg">{donkey.descripcio}</p>
 
+                                    <AudioPlayer
+                                        mp3Source={`../public/AudioDonkey.mp3`} 
+                                       
+                                    />
                                     <button className="px-6 py-2 bg-[#9eefe5] text-[#2c373d] rounded-lg font-bold text-base
                                                        hover:bg-white hover:text-[#2c373d] transition-all duration-300 font-iceberg
                                                        shadow-lg transform hover:scale-[1.02]">
@@ -201,7 +182,7 @@ class Videojocs extends React.Component {
                                             webmSrc={trailerDonkey.webmSrc}
                                             posterSrc={trailerDonkey.posterSrc}
                                             title={trailerDonkey.title}
-                                            lazyLoad={true}
+                                            loading='lazy'
                                         />
                                     )}
                                 </div>

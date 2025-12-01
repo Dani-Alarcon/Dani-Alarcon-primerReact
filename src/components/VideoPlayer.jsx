@@ -3,9 +3,9 @@ import React from "react";
 class VideoPlayer extends React.Component {
     
     render() {
-        const { mp4Src, webmSrc, posterSrc, title, lazyLoad = true } = this.props;
+        const { mp4Src, webmSrc, posterSrc, title, loading = true } = this.props;
 
-        const preloadValue = lazyLoad ? "none" : "auto";
+        const preloadValue = loading ? "none" : "auto";
         
         return (
             <figure className="w-full bg-[#4b617b] rounded-xl overflow-hidden shadow-2xl border-2 border-[#9eefe5]/40">
