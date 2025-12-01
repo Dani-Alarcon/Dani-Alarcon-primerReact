@@ -1,6 +1,7 @@
 import React from "react";
 import VideoPlayer from "./VideoPlayer";
 import AudioPlayer from "./AudioPlayer";
+import Gallery from "./Gallery"
 
 const StarIcon = () => (
     <svg className="w-4 h-4 text-[#9eefe5]" fill="currentColor" viewBox="0 0 20 20">
@@ -19,6 +20,7 @@ const JocCard = ({ title, plataformas, rating, imageSrc }) => (
                 alt={title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                 onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x337/3d4f61/9eefe5?text=JOC"; }}
+                loading='lazy'
             />
         </div>
 
@@ -44,7 +46,6 @@ const JocCard = ({ title, plataformas, rating, imageSrc }) => (
                         transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
     </article>
 );
-
 
 
 
@@ -162,8 +163,8 @@ class Videojocs extends React.Component {
                                     <p className="text-white/90 mb-6 text-lg">{donkey.descripcio}</p>
 
                                     <AudioPlayer
-                                        mp3Source={`../public/AudioDonkey.mp3`} 
-                                       
+                                        mp3Source={`../public/AudioDonkey.mp3`}
+
                                     />
                                     <button className="px-6 py-2 bg-[#9eefe5] text-[#2c373d] rounded-lg font-bold text-base
                                                        hover:bg-white hover:text-[#2c373d] transition-all duration-300 font-iceberg
@@ -193,8 +194,7 @@ class Videojocs extends React.Component {
                         <span className="w-3 h-3 bg-[#9eefe5] rounded-full animate-pulse"></span>
                         Explora la Col·lecció
                     </h2>
-
-                    <section aria-labelledby="recent-games-title" className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                    <Gallery>
                         {jocsRecents.map((joc, index) => (
                             <JocCard
                                 key={index}
@@ -204,7 +204,8 @@ class Videojocs extends React.Component {
                                 imageSrc={joc.imageSrc}
                             />
                         ))}
-                    </section>
+                    </Gallery>
+
                 </section>
             </main>
         );
