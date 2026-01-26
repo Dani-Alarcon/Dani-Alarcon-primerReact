@@ -50,7 +50,7 @@ const Imatge = ({ imageSrc, title, category }) => (
     </article>
 );
 
-const Section = () => {
+const Inici = () => {
     const llistatNoticies = [
         { title: "Les últimes novetats del món gaming", buttonText: "Veure més" },
         { title: "Anàlisi dels millors llançaments", buttonText: "Veure més" },
@@ -171,4 +171,4 @@ const Section = () => {
     );
 };
 
-export default Section;
+export default Inici;

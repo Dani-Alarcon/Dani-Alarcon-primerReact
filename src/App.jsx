@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import Header from './components/Header'
-import Inici from './components/Section'
+import Inici from './components/Inici'
 import Footer from './components/Footer'
 import Noticies from './components/Noticies'
 import Videojocs from './components/Videojocs'
