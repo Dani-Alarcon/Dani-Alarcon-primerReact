@@ -5,7 +5,8 @@ const Card = ({ title, buttonText, index }) => {
     const estilBoto = "relative z-10 px-4 py-1.5 bg-[#2c373d] text-[#9eefe5] rounded-lg font-medium text-sm hover:bg-[#9eefe5] hover:text-[#2c373d] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105";
 
     return (
-        <div className={`group relative ${estilTargeta} from-[#6c859d] to-[#7a92aa] 
+        
+        <article className={`group relative ${estilTargeta} from-[#6c859d] to-[#7a92aa] 
                         hover:scale-[1.02] hover:shadow-[#9eefe5]/50 hover:ring-2 hover:ring-[#9eefe5] 
                         bg-gradient-to-r overflow-hidden`}>
             
@@ -24,12 +25,13 @@ const Card = ({ title, buttonText, index }) => {
             <button className={estilBoto}> 
                 {buttonText} →
             </button>
-        </div>
+        </article>
     );
 };
 
 const Imatge = ({ imageSrc, title, category }) => (
-    <div className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:ring-2 hover:ring-[#9eefe5]">
+    
+    <article className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:ring-2 hover:ring-[#9eefe5]">
         <div className="aspect-video bg-[#2c373d] relative overflow-hidden">
             <img src={imageSrc} alt={title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#2c373d] via-transparent to-transparent opacity-80"></div>
@@ -45,7 +47,7 @@ const Imatge = ({ imageSrc, title, category }) => (
                 </button>
             </div>
         </div>
-    </div>
+    </article>
 );
 
 const Section = () => {
@@ -76,7 +78,8 @@ const Section = () => {
 
 
     return (
-        <section 
+        
+        <main 
             className="relative w-full min-h-screen py-12 bg-cover bg-center bg-no-repeat overflow-hidden"
             style={{ backgroundImage: "url('/fondoWeb.png')", width:"100vw" }}
         >
@@ -84,7 +87,8 @@ const Section = () => {
             <div className="absolute top-10 left-10 w-72 h-72 bg-[#9eefe5]/10 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#6c859d]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
             
-            <div className="relative z-10 text-center mb-10 px-4">
+            
+            <header className="relative z-10 text-center mb-10 px-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#9eefe5]/10 backdrop-blur-sm border border-[#9eefe5]/30 rounded-full mb-4 shadow-lg">
                     <span className="w-2 h-2 bg-[#9eefe5] rounded-full animate-pulse"></span>
                     <span className="text-[#9eefe5] text-xs font-medium font-iceberg">Actualitzat avui</span>
@@ -96,54 +100,56 @@ const Section = () => {
                 <p className="text-lg text-white/90 max-w-2xl mx-auto drop-shadow-lg">
                     El millor contingut sobre videojocs i notícies del sector
                 </p>
-            </div>
+            </header>
             
             <div className="relative z-10 max-w-7xl mx-auto px-4 flex flex-col lg:flex-row justify-center lg:space-x-8 space-y-8 lg:space-y-0 mb-12">
                 
-                <div className={classesColumna}>
-                    <div className="flex items-center justify-center gap-2 mb-5">
+                
+                <section className={classesColumna}>
+                    <header className="flex items-center justify-center gap-2 mb-5">
                         <div className={divisorTitol}></div>
                         <h2 className={classesTitol}>
                             Últimes notícies
                         </h2>
                         <div className={`${divisorTitol} bg-gradient-to-l`}></div>
-                    </div>
+                    </header>
                     
                     {llistatNoticies.map((item, index) => (
                         <Card key={index} title={item.title} buttonText={item.buttonText} index={index} />
                     ))}
                     
-                    <div className="mt-4 pt-4 border-t border-[#9eefe5]/20 flex items-center justify-center gap-2">
+                    <footer className="mt-4 pt-4 border-t border-[#9eefe5]/20 flex items-center justify-center gap-2">
                         <div className="w-1.5 h-1.5 bg-[#9eefe5] rounded-full animate-pulse"></div>
                         <div className="w-1.5 h-1.5 bg-[#9eefe5] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                         <div className="w-1.5 h-1.5 bg-[#9eefe5] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-                    </div>
-                </div>
+                    </footer>
+                </section>
 
                 
-                <div className={classesColumna}>
-                    <div className="flex items-center justify-center gap-2 mb-5">
+                <section className={classesColumna}>
+                    <header className="flex items-center justify-center gap-2 mb-5">
                         <div className={divisorTitol}></div>
                         <h2 className={`${classesTitol} text-center`}>
                             Millors videojocs
                         </h2>
                         <div className={`${divisorTitol} bg-gradient-to-l`}></div>
-                    </div>
+                    </header>
                     
                     {llistatVideojocs.map((item, index) => (
                         <Card key={index} title={item.title} buttonText={item.buttonText} index={index} />
                     ))}
                     
-                    <div className="mt-4 pt-4 border-t border-[#9eefe5]/20 flex items-center justify-center gap-2">
+                    <footer className="mt-4 pt-4 border-t border-[#9eefe5]/20 flex items-center justify-center gap-2">
                         <div className="w-1.5 h-1.5 bg-[#9eefe5] rounded-full animate-pulse"></div>
                         <div className="w-1.5 h-1.5 bg-[#9eefe5] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                         <div className="w-1.5 h-1.5 bg-[#9eefe5] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
-                    </div>
-                </div>
+                    </footer>
+                </section>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4">
-                <div className="text-center mb-8">
+            
+            <section className="relative z-10 max-w-7xl mx-auto px-4">
+                <header className="text-center mb-8">
                     <div className="inline-flex items-center gap-3 mb-4">
                         <div className="h-0.5 w-16 bg-gradient-to-r from-transparent to-[#9eefe5]/50 rounded-full"></div>
                         <h2 className="text-2xl md:text-3xl font-bold text-[#9eefe5] font-iceberg drop-shadow-lg">
@@ -152,16 +158,16 @@ const Section = () => {
                         <div className="h-0.5 w-16 bg-gradient-to-l from-transparent to-[#9eefe5]/50 rounded-full"></div>
                     </div>
                     <p className="text-white/80 text-sm">Els millors articles i guies seleccionats per tu</p>
-                </div>
+                </header>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {imatgesDestacades.map((item, index) => (
                         <Imatge key={index} imageSrc={item.imageSrc} title={item.title} category={item.category} />
                     ))}
                 </div>
-            </div>
+            </section>
              
-        </section>
+        </main>
     );
 };
 
