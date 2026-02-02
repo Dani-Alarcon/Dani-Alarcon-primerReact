@@ -1,0 +1,11 @@
+# Indica que les regles s'apliquen a tots els cercadors
+User-agent: *
+
+# Bloqueja l'accés a les rutes privades
+Disallow: /admin
+Disallow: /privat
+
+# Permet la resta del lloc (opcional, ja que és el comportament per defecte)
+Allow: /
+
+# Sitemap: http://localhost:5173/Sitemap.xml
