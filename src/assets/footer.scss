@@ -1,8 +1,8 @@
 @use "variables" as *;
 
-// --- VARIABLES DE CONTROL INTERNES ---
-$footer-is-fixed: true; // Controla el condicional
-$xarxes-llista: "twitter", "instagram", "twitch"; // Llista per al bucle
+
+$footer-is-fixed: true;
+$xarxes-llista: "twitter", "instagram", "twitch"; 
 
 .site-footer {
     background-color: $colorCorporatius;
@@ -10,8 +10,6 @@ $xarxes-llista: "twitter", "instagram", "twitch"; // Llista per al bucle
     z-index: 50;
     border-top: 4px solid $teal-accent;
 
-    // --- 1. CONDICIONAL ---
-    // Decidim si el footer es queda clavat a sota o no
     @if $footer-is-fixed {
         position: fixed;
         bottom: 0;
@@ -19,7 +17,6 @@ $xarxes-llista: "twitter", "instagram", "twitch"; // Llista per al bucle
         position: relative;
     }
 
-    // Estructura niada per seguir l'HTML (Neteja visual)
     .footer-container {
         max-width: 80rem;
         margin: 0 auto;
@@ -32,8 +29,6 @@ $xarxes-llista: "twitter", "instagram", "twitch"; // Llista per al bucle
             gap: 1.5rem;
             margin-bottom: 0.5rem;
 
-            // --- 2. BUCLE ---
-            // Generem automàticament estils per a cada xarxa
             @each $nom in $xarxes-llista {
                 .link-#{$nom} {
                     color: $teal-accent;
@@ -57,7 +52,6 @@ $xarxes-llista: "twitter", "instagram", "twitch"; // Llista per al bucle
             margin: 0;
         }
 
-        // Responsivitat agrupada dins del contenidor
         @media (min-width: 640px) { padding: 1rem 1.5rem; }
         @media (min-width: 1024px) { padding: 1rem 2rem; }
     }

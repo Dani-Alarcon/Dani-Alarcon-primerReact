@@ -3,7 +3,6 @@ import "../assets/footer.scss";
 
 class Footer extends React.Component {
     render() {
-        // Dades d'exemple per visualitzar el bucle
         const xarxes = ["Twitter", "Instagram", "Twitch"];
 
         return (
