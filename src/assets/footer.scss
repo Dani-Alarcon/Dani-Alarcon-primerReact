@@ -1,35 +1,64 @@
 @use "variables" as *;
 
+// --- VARIABLES DE CONTROL INTERNES ---
+$footer-is-fixed: true; // Controla el condicional
+$xarxes-llista: "twitter", "instagram", "twitch"; // Llista per al bucle
+
 .site-footer {
-  background-color: $colorCorporatius;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  z-index: 50;
-  border-top: 4px solid $teal-accent;
-}
+    background-color: $colorCorporatius;
+    width: 100%;
+    z-index: 50;
+    border-top: 4px solid $teal-accent;
 
-.footer-container {
-  max-width: 80rem; // 7xl
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem 1rem; // py-4 i px-4
-  text-align: center;
+    // --- 1. CONDICIONAL ---
+    // Decidim si el footer es queda clavat a sota o no
+    @if $footer-is-fixed {
+        position: fixed;
+        bottom: 0;
+    } @else {
+        position: relative;
+    }
 
-  // Media queries per als paddings responsius (sm i lg)
-  @media (min-width: 640px) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+    // Estructura niada per seguir l'HTML (Neteja visual)
+    .footer-container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 1rem;
+        text-align: center;
 
-  @media (min-width: 1024px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
 
-.footer-copy {
-  color: $text-muted;
-  font-size: 0.875rem; // text-sm
-  margin: 0;
+            // --- 2. BUCLE ---
+            // Generem automàticament estils per a cada xarxa
+            @each $nom in $xarxes-llista {
+                .link-#{$nom} {
+                    color: $teal-accent;
+                    font-size: 0.8rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                    transition: transform 0.2s ease;
+
+                    &:hover {
+                        transform: translateY(-2px);
+                        filter: brightness(1.2);
+                    }
+                }
+            }
+        }
+
+        .footer-copy {
+            color: $text-muted;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        // Responsivitat agrupada dins del contenidor
+        @media (min-width: 640px) { padding: 1rem 1.5rem; }
+        @media (min-width: 1024px) { padding: 1rem 2rem; }
+    }
 }
