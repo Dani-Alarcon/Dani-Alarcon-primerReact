@@ -1,15 +1,14 @@
 @use "variables" as *;
 
-
 $footer-is-fixed: true;
 $xarxes-llista: "twitter", "instagram", "twitch"; 
 
 .site-footer {
-    background-color: $colorCorporatius;
+    background-color: $color-primary;
     width: 100%;
     z-index: 50;
-    border-top: 4px solid $teal-accent;
-
+    border-top: $footer-border-width solid $color-accent;
+    
     @if $footer-is-fixed {
         position: fixed;
         bottom: 0;
@@ -18,28 +17,30 @@ $xarxes-llista: "twitter", "instagram", "twitch";
     }
 
     .footer-container {
-        max-width: 80rem;
+        display: flex;
+        flex-direction: column; 
+        align-items: center;    
+        justify-content: center;
+        gap: $space-xs;         
+        max-width: $container-max-width;
         margin: 0 auto;
-        padding: 1rem;
-        text-align: center;
+        padding: $space-sm $space-md; 
 
         .footer-links {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 0.5rem;
-
+            gap: $space-lg;     
+            
             @each $nom in $xarxes-llista {
                 .link-#{$nom} {
-                    color: $teal-accent;
-                    font-size: 0.8rem;
+                    color: $color-accent;
+                    font-size: $font-xs;
                     text-transform: uppercase;
-                    letter-spacing: 1px;
+                    letter-spacing: 0.0625rem;
                     cursor: pointer;
-                    transition: transform 0.2s ease;
+                    transition: all 0.3s ease;
 
                     &:hover {
-                        transform: translateY(-2px);
+                        transform: translateY(-0.125rem);
                         filter: brightness(1.2);
                     }
                 }
@@ -47,12 +48,26 @@ $xarxes-llista: "twitter", "instagram", "twitch";
         }
 
         .footer-copy {
-            color: $text-muted;
-            font-size: 0.875rem;
+            color: $color-text-muted;
+            font-size: $font-sm;
             margin: 0;
         }
+    }
 
-        @media (min-width: 640px) { padding: 1rem 1.5rem; }
-        @media (min-width: 1024px) { padding: 1rem 2rem; }
+    @media (min-width: 48rem) {
+        .footer-container {
+            padding: $space-md $space-lg;
+            gap: $space-sm; 
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .footer-container {
+            padding: $space-md $space-xl;
+            
+            .footer-copy {
+                font-size: $font-sm; 
+            }
+        }
     }
 }

@@ -7,14 +7,14 @@ class Footer extends React.Component {
 
         return (
             <footer className="site-footer">
-                <div className="footer-container">
+                <div className="footer-container">                    
                     <div className="footer-links">
                         {xarxes.map((item) => (
                             <span key={item} className={`link-item link-${item.toLowerCase()}`}>
                                 {item}
                             </span>
                         ))}
-                    </div>
+                    </div>                    
                     <p className="footer-copy">© Gaming 2025</p>
                 </div>
             </footer>    
